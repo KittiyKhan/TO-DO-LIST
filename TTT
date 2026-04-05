@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+namespace TodoListApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> taskList = new List<string>();
+            string option = "";
+
+            while (option != "E")
+            {
+                Console.WriteLine("1. Add Task | 2. View Tasks | 3. Remove Task | E. Exit");
+                option = Console.ReadLine().ToUpper();
+
+                if (option == "1")
+                {
+                    Console.Write("Enter task: ");
+                    taskList.Add(Console.ReadLine());
+                }
+                else if (option == "2")
+                {
+                    for (int i = 0; i < taskList.Count; i++)
+                    {
+                        Console.WriteLine($"{i + 1}. {taskList[i]}");
+                    }
+                }
+                else if (option == "3")
+                {
+                    Console.Write("Enter task number to remove: ");
+                    int index = int.Parse(Console.ReadLine()) - 1;
+                    if (index >= 0 && index < taskList.Count)
+                    {
+                        taskList.RemoveAt(index);
+                    }
+                }
+            }
+        }
+    }
+}
