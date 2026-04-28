@@ -1,0 +1,14 @@
+const isPremiumAdultUser = (user) => {
+  const isAdult = user.age >= 18;
+  const hasPremium = user.subscriptionType === 'premium';
+  return isAdult && hasPremium;
+};
+
+if (isPremiumAdultUser(user)) {
+  hideAllAdvertisements();
+}
+
+// Check if user is an adult and has a premium subscription
+if (u.age >= 18 && u.sub === 'p') {
+  showAds(false);
+}
